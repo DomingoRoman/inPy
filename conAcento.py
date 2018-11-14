@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-#  usocomas.py
 #  
 #  Copyright 2018 imac <imac@iMac-de-imac.local>
 #  
@@ -104,4 +102,4 @@ elif cerradaTonicaMasAbierta == 0:
     elif letraFinal == "s":
       print(graveSinAcento)
     else: 
-		print(graveConAcento)
+	print(graveConAcento)
