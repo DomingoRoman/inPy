@@ -1,0 +1,169 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#  identificadorCategorial.py
+#  
+#  Copyright 2017 mapa <mapa@jules>
+#  
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+#  
+#  
+import pdb
+from subprocess import call
+import random
+import time
+
+# Limpiar la pantalla 
+
+
+reporte01 = "Has respondido "
+reporte02 = " respuestas correctas de un total de "
+reporte03 = " y has tenido "
+reporte04 = " equivocaciones."
+reporte05 = "Y te demoras "
+reporte06 = " segundos aprox. en cada respuesta."
+entrada = "Presiona ENTER"
+
+call("clear")
+
+# Listas de palabras
+lista_sustantivos_m = ["piano", "rinoceronte", "cuaderno", "acueducto", "libro", "bolso","licor",
+                       "gato", "tazón", "misterio", "teléfono", "plato", "cuadro", "iluminación", 
+                       "tarjetero"]
+lista_sustantivos_f = ["cadena", "pantera", "luz", "luna", "guitarra", "flauta","agua", "agenda",
+                      "taza", "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
+                      "letra"]
+lista_adjetivos_m = ["musical", "caluroso", "misterioso", "lejano", "blanquecino", "amargo","cronológico", "transparente",
+                    "delgado", "rojizo", "húmedo", "duradero", "divino", "pesado", "suculento"]
+lista_adjetivos_f = ["musical", "rugosa", "misteriosa", "sabrosa", "victoriosa", "acaudalada","tierna",
+                     "delicada", "rosada", "cristalina", "dura", "hermética", "funcional", "terrible"]
+lista_verbos_inf = ["arder", "arrugar", "enmascarar", "cosechar", "comer", "alejar","morder", "sufrir", 
+                    "viajar", "escribir", "leer", "diagramar", "elegir", "adormecer", "pelear", "besar"]
+lista_adverbios = ["rápidamente", "lentamente", "mucho", "ahí", "acá", "lejos", "cerca", "nunca", "así",
+                   "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente"]
+
+# longitudes de cada lista
+l_lis_sust_m = len(lista_sustantivos_m)
+l_lis_sust_f = len(lista_sustantivos_f)
+l_lis_adj_m = len(lista_adjetivos_m)
+l_lis_adj_f = len(lista_adjetivos_f)
+l_lis_verb_in = len(lista_verbos_inf)
+l_lis_adverb = len(lista_adverbios)
+
+# aleatorización del número de preguntas
+ene_veces = random.randint(6, 12)
+
+print("Tendrás que responder",ene_veces,"preguntas")
+print("Verás una palabra y tendrás que decir si es adjetivo, sustantivo, verbo o adverbio")
+print("Usa 1 para sustantivo\n 2 para adjetivo\n 3 para verbo\n 4 para adverbio")
+print("...")
+print(entrada)
+
+
+espera = (raw_input())
+
+
+contador_correctas = 0
+contador_incorrectas = 0
+
+inicio = time.time()
+
+for i in range(ene_veces):
+    call("clear")
+    print("Recuerda: \n1 = sustantivo\n 2 = adjetivo\n 3 = verbo\n 4 = adverbio")
+    categoria = random.randint(1, 6)
+    if categoria == 1:
+        cat_preg = lista_sustantivos_m
+    if categoria == 2:
+        cat_preg = lista_sustantivos_f
+    if categoria == 3: 
+        cat_preg = lista_adjetivos_m
+    if categoria == 4:
+        cat_preg = lista_adjetivos_f
+    if categoria == 5:
+        cat_preg = lista_verbos_inf   
+    if categoria == 6:
+        cat_preg = lista_adverbios
+
+    n_sel_item = random.randint(1, 6)
+    qu = cat_preg[n_sel_item]
+    
+    print(qu) 
+    resp = int(raw_input())
+
+    if cat_preg == lista_sustantivos_m and resp == 1:
+       contador_correctas = contador_correctas + 1
+       print("Efectivamente")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_sustantivos_m and resp != 1:
+             contador_incorrectas = contador_incorrectas + 1 
+             print("Noooooo")
+             espera = (raw_input("Presiona enter"))
+    if cat_preg == lista_sustantivos_f and resp == 1:
+       contador_correctas = contador_correctas + 1
+       print("Respuesta correcta")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_sustantivos_f and resp != 1:
+         contador_incorrectas = contador_incorrectas + 1 
+         print("Estás en un error")
+         espera = (raw_input("Presiona enter"))
+    if cat_preg == lista_adjetivos_m and resp == 2:
+       contador_correctas = contador_correctas + 1
+       print("Ciertamente!")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_adjetivos_m and resp != 2:
+         contador_incorrectas = contador_incorrectas + 1 
+         print("Equivocada es tu respuesta")
+         espera = (raw_input("Presiona enter"))
+    if cat_preg == lista_adjetivos_f and resp == 2:
+       contador_correctas = contador_correctas + 1
+       print("Ciertamente!")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_adjetivos_f and resp != 2:
+         contador_incorrectas = contador_incorrectas + 1 
+         print("Equivocada es tu respuesta")
+         espera = (raw_input("Presiona enter"))
+    if cat_preg == lista_verbos_inf and resp == 3:
+       contador_correctas = contador_correctas + 1
+       print("Ciertamente!")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_verbos_inf and resp != 3:
+         contador_incorrectas = contador_incorrectas + 1 
+         print("Equivocada es tu respuesta")
+         espera = (raw_input("Presiona enter"))    
+    if cat_preg == lista_adverbios and resp == 4:
+       contador_correctas = contador_correctas + 1
+       print("Ajá! Cierto!!!")
+       espera = (raw_input("Presiona enter"))
+    elif cat_preg == lista_adverbios and resp != 4:
+         contador_incorrectas = contador_incorrectas + 1 
+         print("Se equivocó la paloma!")
+         espera = (raw_input("Presiona enter")) 
+
+final = time.time()
+# cuenta el tiempo del proceso total
+tiempo_total = final-inicio
+tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
+
+cuantas_correctas =str(contador_correctas)
+cuantas_preguntas = str(ene_veces)
+cuantas_incorrectas =str(contador_incorrectas)
+cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
+print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
+
+
+print(reporte03 + cuantas_incorrectas+ reporte04)
+print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
