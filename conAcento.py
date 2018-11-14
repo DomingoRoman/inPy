@@ -21,8 +21,6 @@
 #  MA 02110-1301, USA.
 #  
 #  
-
-
 # Algoritmo para decidir si una palabra se escribe con o sin acento
 # Solo resuelve casos relacionados con leyes generales
 
@@ -38,14 +36,6 @@ ndeSilabas = int(input())
 
 ndeSilabas_string = str(ndeSilabas)
 
-inic_01 ="La palabra tiene "
-
-fin_01 = " sílabas"
-
-print(inic_01 + ndeSilabas_string + fin_01)
-
-
-
 print('¿Cuál es la última letra de esa palabra?')
 
 print('Use comillas, por favor; por ejemplo, "m" ')
@@ -53,7 +43,10 @@ print('Use comillas, por favor; por ejemplo, "m" ')
 letraFinal = input()
 
 enuncRespuesta = "La palabra se escribe con acento en la sílaba "
-
+agudaConAcento = "La palabra se escribe con acento en la última sílaba."
+agudaSinAcento = "Es una palabra aguda que se escribe sin acento!"
+graveSinAcento = "Es una palabra grave que se escribe sin acento."
+graveConAcento = "Es una palabra grave que se escribe con acento"
 
 # primera categoría con acento
 print("De ahora en adelante, use '1' como 'sí' y '0' como 'no'")
@@ -79,36 +72,36 @@ elif cerradaTonicaMasAbierta == 0:
 
   if deltaTonicaFinal == 0:
     if letraFinal == "a":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "e":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "i":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "o":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "u":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "n":
-        print('La palabra se escribe con acento en la última sílaba.')
+        print(agudaConAcento)
     elif letraFinal == "s":
-      print('La palabra se escribe con acento en la última sílaba.')
+      print(agudaConAcento)
     else:
-      print('Es una palabra aguda que se escribe sin acento!')
+      print(agudaSinAcento)
 
   if deltaTonicaFinal == 1:
     if letraFinal == "a":
-      print('Es una palabra grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "e":
-      print('Es una palabra grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "i":
-      print('Es una palabra grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "o":
-      print('Es una palabra grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "u":
-      print('Es una palabra grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "n":
-      print('Grave que se escribe sin acento.')
+      print(graveSinAcento)
     elif letraFinal == "s":
-      print('Es una palabra grave que se escribe sin acento.')
-    else:
-      print('Es una palabra grave que se escribe con acento.')
+      print(graveSinAcento)
+    else: 
+		print(graveConAcento)
