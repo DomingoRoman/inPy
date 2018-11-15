@@ -65,7 +65,7 @@ lista_verbos_inf = ["arder", "arrugar", "enmascarar", "cosechar", "comer", "alej
                    "arriesgar", "tramar", "perder", "soñar", "levitar", "acorralar", "visitar", "acampar"]
 lista_adverbios = ["rápidamente", "lentamente", "mucho", "ahí", "acá", "lejos", "cerca", "nunca", "así",
                    "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente",
-"bastante","apenas","aquí", "allí", "allá"]
+                   "bastante","apenas","aquí", "allí", "allá"]
 
 
 
