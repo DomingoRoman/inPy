@@ -42,18 +42,23 @@ call("clear")
 # Listas de palabras
 lista_sustantivos_m = ["piano", "rinoceronte", "cuaderno", "acueducto", "libro", "bolso","licor",
                        "gato", "tazón", "misterio", "teléfono", "plato", "cuadro", "iluminación", 
-                       "tarjetero"]
+                       "tarjetero", "camión", "barco", "triángulo", "quimera", "ojo", "huracán",
+                      "azúcar"]
 lista_sustantivos_f = ["cadena", "pantera", "luz", "luna", "guitarra", "flauta","agua", "agenda",
                       "taza", "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
-                      "letra"]
+                      "letra", "flor", "duna", "silla", "amiga", "pastilla", "vaca", "piedra", "boa"]
 lista_adjetivos_m = ["musical", "caluroso", "misterioso", "lejano", "blanquecino", "amargo","cronológico", "transparente",
-                    "delgado", "rojizo", "húmedo", "duradero", "divino", "pesado", "suculento"]
+                    "delgado", "rojizo", "húmedo", "duradero", "divino", "pesado", "suculento", "tierno",
+                    "mostruoso", "alaraco", "tormentoso", "calamitoso", "amarillento", "emplumado", "viscoso"]
 lista_adjetivos_f = ["musical", "rugosa", "misteriosa", "sabrosa", "victoriosa", "acaudalada","tierna",
-                     "delicada", "rosada", "cristalina", "dura", "hermética", "funcional", "terrible"]
+                     "delicada", "rosada", "cristalina", "dura", "hermética", "funcional", "terrible",
+                    "tímida", "acuosa", "enfermiza", "azulada", "parduzca", "ovalada", "metódica"]
 lista_verbos_inf = ["arder", "arrugar", "enmascarar", "cosechar", "comer", "alejar","morder", "sufrir", 
-                    "viajar", "escribir", "leer", "diagramar", "elegir", "adormecer", "pelear", "besar"]
+                    "viajar", "escribir", "leer", "diagramar", "elegir", "adormecer", "pelear", "besar",
+                   "arriesgar", "tramar", "perder", "soñar", "levitar", "acorralar", "visitar", "acampar"]
 lista_adverbios = ["rápidamente", "lentamente", "mucho", "ahí", "acá", "lejos", "cerca", "nunca", "así",
-                   "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente"]
+                   "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente",
+                  "bastante","apenas","aquí", "allí", "allá"]
 
 # longitudes de cada lista
 l_lis_sust_m = len(lista_sustantivos_m)
