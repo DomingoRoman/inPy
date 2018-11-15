@@ -26,7 +26,44 @@
 # lista de morfemas de número
 # bases léxicas susceptibles de morfemas de género y número
 
+morfemas_genero = ["a", "o"]
+morfemas_numero = [" ", "s"]
+  
+sust_m_marca_genero_e = ["rinoceronte", "bisonte"]
 
+sust_m_sin_marca_genero_c = ["licor", "iluminación", "tazón", "camión", "azúcar", "huracán", "clavel",
+                             "baúl", "caudal"]
+
+sust_m_con_marca_o_genero = ["teléfono", "cuadro", "acueducto", "libro", "misterio", "plato", "tarjetero",
+                           "barco", "triángulo", "ojo",  "piano",  "cuaderno"]
+
+sust_0_base = ["gat", "bols", "amig", "compañer", "pes"]
+
+sust_f_con_marca_a_genero = ["cadena", "pantera", "luna", "guitarra", "flauta","agua", "agenda","quimera",
+                             "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
+                             "taza",  "letra","duna", "silla", , "pastilla", "vaca", "piedra", "boa", "estrella",
+                            "culebra", "orbita"]
+
+sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombriz", "perdiz", "cruz"]
+
+sust_f_marca_genero_e = ["elipse", "techumbre"]
+
+
+  
+
+########################################    
+lista_adjetivos_m = ["musical", "caluroso", "misterioso", "lejano", "blanquecino", "amargo","cronológico", "transparente",
+                    "delgado", "rojizo", "húmedo", "duradero", "divino", "pesado", "suculento", "tierno",
+                    "mostruoso", "alaraco", "tormentoso", "calamitoso", "amarillento", "emplumado", "viscoso"]
+lista_adjetivos_f = ["musical", "rugosa", "misteriosa", "sabrosa", "victoriosa", "acaudalada","tierna",
+                     "delicada", "rosada", "cristalina", "dura", "hermética", "funcional", "terrible",
+                    "tímida", "acuosa", "enfermiza", "azulada", "parduzca", "ovalada", "metódica"]
+lista_verbos_inf = ["arder", "arrugar", "enmascarar", "cosechar", "comer", "alejar","morder", "sufrir", 
+                    "viajar", "escribir", "leer", "diagramar", "elegir", "adormecer", "pelear", "besar",
+                   "arriesgar", "tramar", "perder", "soñar", "levitar", "acorralar", "visitar", "acampar"]
+lista_adverbios = ["rápidamente", "lentamente", "mucho", "ahí", "acá", "lejos", "cerca", "nunca", "así",
+                   "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente",
+"bastante","apenas","aquí", "allí", "allá"]
 
 
 
