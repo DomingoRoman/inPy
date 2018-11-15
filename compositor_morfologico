@@ -26,8 +26,10 @@
 # lista de morfemas de número
 # bases léxicas susceptibles de morfemas de género y número
 
-morfemas_genero = ["a", "o"]
-morfemas_numero = [" ", "s"]
+morf_genero_fem = "a"
+morf_genero_mas = "o"
+morf_numero_sing = " "
+morf_numero_plur = "s"
   
 sust_m_marca_genero_e = ["rinoceronte", "bisonte"]
 
