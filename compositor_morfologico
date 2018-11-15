@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 #  identificadorCategorial.py
 #  
@@ -20,7 +22,9 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-
+import pdb
+from subprocess import call
+import random
 
 # lista de morfemas de género
 # lista de morfemas de número
@@ -43,7 +47,7 @@ sust_0_base = ["gat", "bols", "amig", "compañer", "pes"]
 
 sust_f_con_marca_a_genero = ["cadena", "pantera", "luna", "guitarra", "flauta","agua", "agenda","quimera",
                              "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
-                             "taza",  "letra","duna", "silla", , "pastilla", "vaca", "piedra", "boa", "estrella",
+                             "taza",  "letra","duna", "silla", "pastilla", "vaca", "piedra", "boa", "estrella",
                             "culebra", "orbita"]
 
 sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombriz", "perdiz", "cruz"]
@@ -51,23 +55,21 @@ sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombr
 sust_f_marca_genero_e = ["elipse", "techumbre"]
 
 
+# longitudes de cada lista
+n_sust_m_marca_genero_e = len(sust_m_marca_genero_e)
+n_sust_m_sin_marca_genero_c = len(sust_m_sin_marca_genero_c)
+n_sust_m_con_marca_o_genero = len(sust_m_con_marca_o_genero)
+n_sust_0_base =len(sust_0_base)
+n_sust_f_con_marca_a_genero = len(sust_f_con_marca_a_genero)
+n_sust_f_sin_marca_genero = len(sust_f_sin_marca_genero)
+n_sust_f_marca_genero_e = len(sust_f_marca_genero_e)
 
-
-########################################    
-lista_adjetivos_m = ["musical", "caluroso", "misterioso", "lejano", "blanquecino", "amargo","cronológico", "transparente",
-                    "delgado", "rojizo", "húmedo", "duradero", "divino", "pesado", "suculento", "tierno",
-                    "mostruoso", "alaraco", "tormentoso", "calamitoso", "amarillento", "emplumado", "viscoso"]
-lista_adjetivos_f = ["musical", "rugosa", "misteriosa", "sabrosa", "victoriosa", "acaudalada","tierna",
-                     "delicada", "rosada", "cristalina", "dura", "hermética", "funcional", "terrible",
-                    "tímida", "acuosa", "enfermiza", "azulada", "parduzca", "ovalada", "metódica"]
-lista_verbos_inf = ["arder", "arrugar", "enmascarar", "cosechar", "comer", "alejar","morder", "sufrir", 
-                    "viajar", "escribir", "leer", "diagramar", "elegir", "adormecer", "pelear", "besar",
-                   "arriesgar", "tramar", "perder", "soñar", "levitar", "acorralar", "visitar", "acampar"]
-lista_adverbios = ["rápidamente", "lentamente", "mucho", "ahí", "acá", "lejos", "cerca", "nunca", "así",
-                   "demasiado", "temprano", "ahora", "deprisa", "peor", "ayer", "sorpresivamente",
-                   "bastante","apenas","aquí", "allí", "allá"]
-
-
-
+print(n_sust_m_marca_genero_e)
+print(n_sust_m_sin_marca_genero_c)
+print(n_sust_m_con_marca_o_genero)
+print(n_sust_0_base)
+print(n_sust_f_con_marca_a_genero)
+print(n_sust_f_sin_marca_genero)
+print(n_sust_f_marca_genero_e)
 
 
