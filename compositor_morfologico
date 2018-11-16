@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 #  ConstructorMorfologico.py
@@ -35,15 +35,17 @@ import random
 morfema_genero = ["a", "o"]
 morfema_numero = ["", "s"]
 
-sust_m_marca_genero_e = ["rinoceronte", "bisonte", "estudiante"]
+sust_m_marca_genero_e = ["rinoceronte", "bisonte", "estudiante", "arte", "cine", "auge", "bate", "bebé",
+						"bote", "café", "aceite"]
 
-sust_m_sin_marca_genero_c = ["licor", "farol", "tazón", "camión", "azúcar", "huracán", "clavel",
-                             "baúl", "caudal"]
+sust_m_sin_marca_genero_c = ["licor", "farol", "tazón", "camión", "azúcar", "huracán", "clavel", "atún",
+                             "baúl", "caudal", "temor", "amor", "candor", "esternón", "afán", "imán", "axón",
+                             "edén", "andén", "avión", "torreón", "abdomen", "algodón", "almidón" ]
 
 sust_m_con_marca_o_genero = ["teléfono", "cuadro", "acueducto", "libro", "misterio", "plato", "tarjetero",
-                           "barco", "triángulo", "ojo",  "piano",  "cuaderno"]
+                           "barco", "triángulo", "ojo",  "piano",  "cuaderno", "ajo", "oro", "apio", "lirio"]
 
-sust_0_base = ["gat", "bols", "amig", "compañer", "pes", "loc", "mosc"]
+sust_0_base = ["gat", "bols", "amig", "compañer", "pes", "loc", "mosc", "alumn", "os", "niñ"]
 
 sust_f_con_marca_a_genero = ["cadena", "pantera", "luna", "guitarra", "flauta","agua", "agenda","quimera",
                              "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
@@ -52,7 +54,7 @@ sust_f_con_marca_a_genero = ["cadena", "pantera", "luna", "guitarra", "flauta","
 
 sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombriz", "perdiz", "cruz", "hiel"]
 
-sust_f_marca_genero_e = ["elipse", "techumbre", "costumbre"]
+sust_f_marca_genero_e = ["elipse", "techumbre", "costumbre", "base", "diástole", "sístole"]
 
 
 # longitudes de cada lista
@@ -106,14 +108,11 @@ if select_categ == 7:
 print(select_categ)
 print("-----")
 enunciado_01 = "Voy a contruir una palabra en género "
-print(enunciado_01+gen)
-print("---____---")
+print(enunciado_01+gen + ":")
 
 posible = random.choice(cat_preg)
-
 
 if select_categ == 4:
 	print(posible + genLitera)
 else:
 	print(posible)
-  
