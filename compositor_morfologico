@@ -1,7 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#
+#  ConstructorMorfologico.py
+#  
+#  Copyright 2018 imac <imac@iMac-de-imac.local>
+#  
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+#  
 #
 #  identificadorCategorial.py
 
@@ -14,14 +32,12 @@ import random
 # lista de morfemas de número
 # bases léxicas susceptibles de morfemas de género y número
 
-morf_genero_fem = "a"
-morf_genero_mas = "o"
-morf_numero_sing = " "
-morf_numero_plur = "s"
-  
+morfema_genero = ["a", "o"]
+morfema_numero = ["", "s"]
+
 sust_m_marca_genero_e = ["rinoceronte", "bisonte", "estudiante"]
 
-sust_m_sin_marca_genero_c = ["licor", "iluminación", "tazón", "camión", "azúcar", "huracán", "clavel",
+sust_m_sin_marca_genero_c = ["licor", "farol", "tazón", "camión", "azúcar", "huracán", "clavel",
                              "baúl", "caudal"]
 
 sust_m_con_marca_o_genero = ["teléfono", "cuadro", "acueducto", "libro", "misterio", "plato", "tarjetero",
@@ -60,22 +76,44 @@ print(n_sust_f_marca_genero_e)
 select_categ = random.randint(1, 7)
 
 if select_categ == 1:
-        cat_preg = sust_m_marca_genero_e
+	cat_preg = sust_m_marca_genero_e
+	gen = "masculino"
 if select_categ == 2:
-        cat_preg = sust_m_sin_marca_genero_c
+	cat_preg = sust_m_sin_marca_genero_c
+	gen = "masculino"
 if select_categ == 3:
-        cat_preg = sust_m_con_marca_o_genero
+	cat_preg = sust_m_con_marca_o_genero
+	gen = "masculino"
 if select_categ == 4:
-        cat_preg = sust_0_base
+	cat_preg = sust_0_base
+	genero = random.choice(morfema_genero)
+	if genero == "a":
+		gen = "femenino"
+		genLitera ="a"
+	else:
+		gen = "masculino"
+		genLitera ="o"
 if select_categ == 5:
-        cat_preg = sust_f_con_marca_a_genero
+	cat_preg = sust_f_con_marca_a_genero
+	gen = "femenino"
 if select_categ == 6:
-        cat_preg = sust_f_con_marca_a_genero
+	cat_preg = sust_f_con_marca_a_genero
+	gen = "femenino"
 if select_categ == 7:
-        cat_preg = sust_f_marca_genero_e
+	cat_preg = sust_f_marca_genero_e
+	gen = "femenino"
 
 print(select_categ)
+print("-----")
+enunciado_01 = "Voy a contruir una palabra en género "
+print(enunciado_01+gen)
+print("---____---")
 
 posible = random.choice(cat_preg)
 
-print(posible)
+
+if select_categ == 4:
+	print(posible + genLitera)
+else:
+	print(posible)
+  
