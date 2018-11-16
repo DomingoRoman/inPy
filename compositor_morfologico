@@ -4,24 +4,8 @@
 # -*- coding: utf-8 -*-
 #
 #  identificadorCategorial.py
-#  
-#  Copyright 2017 mapa <mapa@jules>
-#  
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
-#  
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#  
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-#  MA 02110-1301, USA.
-#  
+
+
 import pdb
 from subprocess import call
 import random
@@ -35,7 +19,7 @@ morf_genero_mas = "o"
 morf_numero_sing = " "
 morf_numero_plur = "s"
   
-sust_m_marca_genero_e = ["rinoceronte", "bisonte"]
+sust_m_marca_genero_e = ["rinoceronte", "bisonte", "estudiante"]
 
 sust_m_sin_marca_genero_c = ["licor", "iluminación", "tazón", "camión", "azúcar", "huracán", "clavel",
                              "baúl", "caudal"]
@@ -43,16 +27,16 @@ sust_m_sin_marca_genero_c = ["licor", "iluminación", "tazón", "camión", "azú
 sust_m_con_marca_o_genero = ["teléfono", "cuadro", "acueducto", "libro", "misterio", "plato", "tarjetero",
                            "barco", "triángulo", "ojo",  "piano",  "cuaderno"]
 
-sust_0_base = ["gat", "bols", "amig", "compañer", "pes"]
+sust_0_base = ["gat", "bols", "amig", "compañer", "pes", "loc", "mosc"]
 
 sust_f_con_marca_a_genero = ["cadena", "pantera", "luna", "guitarra", "flauta","agua", "agenda","quimera",
                              "copa", "agua", "tarjeta", "mesa", "sacerdotiza", "corchetera", "ventana",
                              "taza",  "letra","duna", "silla", "pastilla", "vaca", "piedra", "boa", "estrella",
                             "culebra", "orbita"]
 
-sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombriz", "perdiz", "cruz"]
+sust_f_sin_marca_genero = ["flor", "luz", "cal", "señal", "sal", "miel", "lombriz", "perdiz", "cruz", "hiel"]
 
-sust_f_marca_genero_e = ["elipse", "techumbre"]
+sust_f_marca_genero_e = ["elipse", "techumbre", "costumbre"]
 
 
 # longitudes de cada lista
@@ -73,3 +57,25 @@ print(n_sust_f_sin_marca_genero)
 print(n_sust_f_marca_genero_e)
 
 
+select_categ = random.randint(1, 7)
+
+if select_categ == 1:
+        cat_preg = sust_m_marca_genero_e
+if select_categ == 2:
+        cat_preg = sust_m_sin_marca_genero_c
+if select_categ == 3:
+        cat_preg = sust_m_con_marca_o_genero
+if select_categ == 4:
+        cat_preg = sust_0_base
+if select_categ == 5:
+        cat_preg = sust_f_con_marca_a_genero
+if select_categ == 6:
+        cat_preg = sust_f_con_marca_a_genero
+if select_categ == 7:
+        cat_preg = sust_f_marca_genero_e
+
+print(select_categ)
+
+posible = random.choice(cat_preg)
+
+print(posible)
