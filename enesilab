@@ -76,8 +76,7 @@ print("Verás una palabra y tendrás que decir cuántas sílabas tiene")
 print("...")
 print(entrada)
 
-espera = (raw_input())
-
+espera = (input())
 
 contador_correctas = 0
 contador_incorrectas = 0
@@ -103,48 +102,48 @@ for i in range(ene_veces):
     qu = cat_preg[n_sel_item]
 
     print(qu) 
-    resp = int(raw_input())
+    resp = int(input())
 
     if cat_preg == una and resp == 1:
        contador_correctas = contador_correctas + 1
        print("Efectivamente")
-       espera = (raw_input("Presiona enter"))
+       espera = (input("Presiona enter"))
     elif cat_preg == una and resp != 1:
              contador_incorrectas = contador_incorrectas + 1 
              print("No no no no Noooooo")
-             espera = (raw_input("Presiona enter"))    
+             espera = (input("Presiona enter"))    
     if cat_preg == dos and resp == 2:
        contador_correctas = contador_correctas + 1
        print("Respuesta correcta")
-       espera = (raw_input("Presiona enter"))
+       espera = (input("Presiona enter"))
     elif cat_preg == dos and resp != 2:
          contador_incorrectas = contador_incorrectas + 1 
          print("Estás en un error")
-         espera = (raw_input("Presiona enter"))      
+         espera = (input("Presiona enter"))      
     if cat_preg == tres and resp == 3:
        contador_correctas = contador_correctas + 1
        print("Ciertamente!")
-       espera = (raw_input("Presiona enter"))
+       espera = (input("Presiona enter"))
     elif cat_preg == tres and resp != 3:
          contador_incorrectas = contador_incorrectas + 1 
          print("Equivocada es tu respuesta")
-         espera = (raw_input("Presiona enter"))       
+         espera = (input("Presiona enter"))       
     if cat_preg == cuatro and resp == 4:
        contador_correctas = contador_correctas + 1
        print("Excelente!!!!")
-       espera = (raw_input("Presiona enter"))
+       espera = (input("Presiona enter"))
     elif cat_preg == cuatro and resp != 4:
          contador_incorrectas = contador_incorrectas + 1 
          print("Equivocada es tu respuesta")
-         espera = (raw_input("Presiona enter"))
+         espera = (input("Presiona enter"))
     if cat_preg == cinco and resp == 5:
        contador_correctas = contador_correctas + 1
        print("Excelente!!!!")
-       espera = (raw_input("Presiona enter"))
+       espera = (input("Presiona enter"))
     elif cat_preg == cinco and resp != 5:
          contador_incorrectas = contador_incorrectas + 1 
          print("Equivocada es tu respuesta")
-         espera = (raw_input("Presiona enter"))
+         espera = (input("Presiona enter"))
 
 final = time.time()
 # cuenta el tiempo del proceso total
@@ -160,8 +159,14 @@ cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
 porcentaje = contador_correctas *100/ ene_veces
 porcentaje_str = str(porcentaje)
 
+if porcentaje > 80:
+	print("Estás bastante bien")
+else:
+	print("Debes mejorar bastante")
+		
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print(reporte03 + cuantas_incorrectas+ reporte04)
 print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
 
 print(reporte07+ porcentaje_str + reporte08)
+
