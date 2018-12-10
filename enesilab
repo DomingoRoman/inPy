@@ -56,10 +56,16 @@ l_enunciados_incorrectas = len(enunciados_incorrectas)
 
 # Listas de palabras
 una = ["vio", "fue", "quien", "miel", "cien", "ley", "pues", "pie", "dio", "cuan", "miau"]
-dos = ["agua","piedra", "boa", "caigo", "leo", "muere", "pierde", "perdió", "coa", "moho", "cahuín", "leer", "peor", "aún", "diario", "Mario", "fía"]
-tres = ["caoba", "Lisboa", "cuidado", "poema", "faena", "acuario", "causeo", "acuosa", "ahora", "María", "beato", "área"]
-cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perdiciones", "mueblería", "aéreo", "venérea", "biología"]
-cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "enfiestáronlo"]
+dos = ["agua","piedra", "boa", "caigo", "leo", "muere", "pierde", "perdió", "coa", "moho", 
+       "cahuín", "leer", "peor", "aún", "diario", "Mario", "fía", "guión", "pua", "mía", "vea"
+       "crear", "caer"]
+tres = ["caoba", "Lisboa", "cuidado", "poema", "faena", "acuario", "causeo", "acuosa", "ahora", 
+        "María", "beato", "área", "fealdad", "presea", "toalla", "recrear", "marear", "paella",
+        "maestro"]
+cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perdiciones", "mueblería",
+           "aéreo", "venérea", "biología", "aparean", "caedizo", "saborear", "maestría"]
+cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
+         "acarréanlo", "aleatorio",]
 
 # longitudes de cada lista
 l_una = len(una)
@@ -159,14 +165,19 @@ cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
 porcentaje = contador_correctas *100/ ene_veces
 porcentaje_str = str(porcentaje)
 
-if porcentaje > 80:
-	print("Estás bastante bien")
-else:
-	print("Debes mejorar bastante")
+
+call("clear")
+
+if porcentaje == 100:
+	print("Estás muy muy bien. Felicitaciones")
+elif porcentaje < 100 and porcentaje > 80:
+	print("Estás bien; aunque debes mejorar un poco todavía")
+elif porcentaje < 80:
+	print("Tendrás que mejorar bastante")
+
 		
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print(reporte03 + cuantas_incorrectas+ reporte04)
 print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
 
 print(reporte07+ porcentaje_str + reporte08)
-
