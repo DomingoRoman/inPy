@@ -165,16 +165,19 @@ porcentaje_str = str(porcentaje)
 call("clear")
 
 if porcentaje == 100:
-	print("Estás muy muy bien. Felicitaciones.")
+	print("Estás muy muy bien. Felicitaciones. :)")
 elif porcentaje < 100 and porcentaje > 80:
-	print("Estás bien; aunque puedes mejorar un poco todavía.")
+	print("Estás bien; aunque puedes mejorar un poco todavía. ;)")
 elif porcentaje < 80 and porcentaje > 50:
-	print("Tendrás que mejorar bastante.")
+	print("Tendrás que mejorar bastante :/")
 elif porcentaje < 50:
-	print("La verdad es que estás muy mal. Tendrás que hacer algo.")
+	print("La verdad es que estás muy mal. Tendrás que hacer algo.  :(")
 
+print("")
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
+print("")
 print(reporte03 + cuantas_incorrectas+ reporte04)
+print("")
 print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
-
+print("")
 print(reporte07+ porcentaje_str + reporte08)
