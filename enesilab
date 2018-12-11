@@ -149,6 +149,7 @@ for i in range(ene_veces):
        espera = (input("Presiona enter"))
 
 final = time.time()
+
 # cuenta el tiempo del proceso total
 tiempo_total = final-inicio
 tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
@@ -158,8 +159,12 @@ cuantas_preguntas = str(ene_veces)
 cuantas_incorrectas =str(contador_incorrectas)
 cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
 
+
 # porcentaje de acierto
 porcentaje = contador_correctas *100/ ene_veces
+# a dos decimales
+porcentaje = round(porcentaje,2)
+# convertir a string
 porcentaje_str = str(porcentaje)
 
 call("clear")
