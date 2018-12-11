@@ -32,16 +32,15 @@ import time
 
 reporte01 = "Has respondido "
 reporte02 = " respuestas correctas de un total de "
-reporte03 = " y has tenido "
+reporte03 = "Has tenido "
 reporte04 = " equivocaciones."
-reporte05 = "Y te demoras "
+reporte05 = "Demoras "
 reporte06 = " segundos aprox. en cada respuesta."
 reporte07 = "Tu porcentaje de logro es de "
 reporte08 = " por ciento"
 entrada = "Presiona ENTER"
 
 call("clear")
-
 
 # Enunciado respuesta correcta
 enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", "Excelente, excelente... muy bien", 
@@ -52,17 +51,20 @@ enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm.
                           "Creo que estás en un error...", "Simplemente no y no (no es no)"]
 
 # Listas de palabras
-una = ["vio", "fue", "quien", "miel", "cien", "ley", "pues", "pie", "dio", "cuan", "miau"]
-dos = ["agua","piedra", "boa", "caigo", "leo", "muere", "pierde", "perdió", "coa", "moho", 
-       "cahuín", "leer", "peor", "aún", "diario", "Mario", "fía", "guión", "pua", "mía", "vea"
-       "crear", "caer"]
-tres = ["caoba", "Lisboa", "cuidado", "poema", "faena", "acuario", "causeo", "acuosa", "ahora", 
-        "María", "beato", "área", "fealdad", "presea", "toalla", "recrear", "marear", "paella",
-        "maestro"]
+una = ["ay", "bien", "buey", "cien", "cuan", "diez", "dio", "dios", "doy", "fue", "hay", "hiel",
+       "hoy",  "juez", "ley", "miau" ,"miel", "nuez", "pie", "piel", "pues", "riel", "ruin", "seis", 
+       "soy", "quien", "vial", "vio"] 
+dos = ["agua",  "aún", "boa", "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "creer", 
+        "cuatro", "diario", "fía", "guión", "leer","leo", "Mario",  "mía",  "moho", "muere", "nueva", 
+        "nueve", "piedra", "pierde",  "peor", "perdió", "pua", "vea", "viuda"]
+        
+tres = [ "acuario", "acuosa",  "ahora", "área",  "beato", "caoba",  "causeo", "cuidado",  "faena", 
+         "poema", "Lisboa", "María","fealdad", "presea", "toalla", "recrear", "marear", "paella",
+         "posee", "maestro"]
 cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perdiciones", "mueblería",
            "aéreo", "venérea", "biología", "aparean", "caedizo", "saborear", "maestría"]
 cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
-         "acarréanlo", "aleatorio",]
+         "acarréanlo", "aleatorio","coordinación"]
 
 # longitudes de cada lista
 l_una = len(una)
@@ -171,9 +173,9 @@ call("clear")
 
 if porcentaje == 100:
 	print("Estás muy muy bien. Felicitaciones. :)")
-elif porcentaje < 100 and porcentaje > 80:
+elif porcentaje < 100 and porcentaje >= 80:
 	print("Estás bien; aunque puedes mejorar un poco todavía. ;)")
-elif porcentaje < 80 and porcentaje > 50:
+elif porcentaje < 80 and porcentaje >= 50:
 	print("Tendrás que mejorar bastante :/")
 elif porcentaje < 50:
 	print("La verdad es que estás muy mal. Tendrás que hacer algo.  :(")
