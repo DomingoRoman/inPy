@@ -45,14 +45,11 @@ call("clear")
 
 # Enunciado respuesta correcta
 enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", "Excelente, excelente... muy bien", 
-                       "Efectivamente. Tu respuesta es correcta"]
-
-l_enunciados_correctas = len(enunciados_correctas)
+                       "Efectivamente. Tu respuesta es correcta", "Lo hiciste bien. Muy bien"]
 
 # Enunciado respuesta incorrecta
-enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no."]
-
-l_enunciados_incorrectas = len(enunciados_incorrectas)
+enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no.", 
+                          "Creo que estás en un error...", "Simplemente no y no (no es no)"]
 
 # Listas de palabras
 una = ["vio", "fue", "quien", "miel", "cien", "ley", "pues", "pie", "dio", "cuan", "miau"]
@@ -112,44 +109,44 @@ for i in range(ene_veces):
 
     if cat_preg == una and resp == 1:
        contador_correctas = contador_correctas + 1
-       print("Efectivamente")
+       print(random.choice(enunciados_correctas))
        espera = (input("Presiona enter"))
     elif cat_preg == una and resp != 1:
-             contador_incorrectas = contador_incorrectas + 1 
-             print("No no no no Noooooo")
-             espera = (input("Presiona enter"))    
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))    
     if cat_preg == dos and resp == 2:
        contador_correctas = contador_correctas + 1
-       print("Respuesta correcta")
+       print(random.choice(enunciados_correctas))
        espera = (input("Presiona enter"))
     elif cat_preg == dos and resp != 2:
-         contador_incorrectas = contador_incorrectas + 1 
-         print("Estás en un error")
-         espera = (input("Presiona enter"))      
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))      
     if cat_preg == tres and resp == 3:
        contador_correctas = contador_correctas + 1
-       print("Ciertamente!")
+       print(random.choice(enunciados_correctas))
        espera = (input("Presiona enter"))
     elif cat_preg == tres and resp != 3:
-         contador_incorrectas = contador_incorrectas + 1 
-         print("Equivocada es tu respuesta")
-         espera = (input("Presiona enter"))       
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))       
     if cat_preg == cuatro and resp == 4:
        contador_correctas = contador_correctas + 1
-       print("Excelente!!!!")
+       print(random.choice(enunciados_correctas))
        espera = (input("Presiona enter"))
     elif cat_preg == cuatro and resp != 4:
-         contador_incorrectas = contador_incorrectas + 1 
-         print("Equivocada es tu respuesta")
-         espera = (input("Presiona enter"))
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))
     if cat_preg == cinco and resp == 5:
        contador_correctas = contador_correctas + 1
-       print("Excelente!!!!")
+       print(random.choice(enunciados_correctas))
        espera = (input("Presiona enter"))
     elif cat_preg == cinco and resp != 5:
-         contador_incorrectas = contador_incorrectas + 1 
-         print("Equivocada es tu respuesta")
-         espera = (input("Presiona enter"))
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))
 
 final = time.time()
 # cuenta el tiempo del proceso total
@@ -165,17 +162,17 @@ cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
 porcentaje = contador_correctas *100/ ene_veces
 porcentaje_str = str(porcentaje)
 
-
 call("clear")
 
 if porcentaje == 100:
-	print("Estás muy muy bien. Felicitaciones")
+	print("Estás muy muy bien. Felicitaciones.")
 elif porcentaje < 100 and porcentaje > 80:
-	print("Estás bien; aunque debes mejorar un poco todavía")
-elif porcentaje < 80:
-	print("Tendrás que mejorar bastante")
+	print("Estás bien; aunque puedes mejorar un poco todavía.")
+elif porcentaje < 80 and porcentaje > 50:
+	print("Tendrás que mejorar bastante.")
+elif porcentaje < 50:
+	print("La verdad es que estás muy mal. Tendrás que hacer algo.")
 
-		
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print(reporte03 + cuantas_incorrectas+ reporte04)
 print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
