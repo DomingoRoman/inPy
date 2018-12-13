@@ -193,6 +193,31 @@ porcentaje_str = str(porcentaje)
 
 call("clear")
 
+##########################
+# reporte fino
+##
+# establece tramo
+##
+
+puntos_tramo = porcentaje/tiempo_por_pregunta
+
+if puntos_tramo >= 80:
+	tramo = "A"
+elif puntos_tramo < 80 and puntos_tramo >= 60:
+	tramo = "B"
+elif puntos_tramo < 60 and puntos_tramo >= 40:
+	tramo = "C"
+elif puntos_tramo < 40 and puntos_tramo >= 20:
+	tramo = "D"
+elif puntos_tramo < 20 and puntos_tramo > 0:
+	tramo = "E"
+
+
+
+
+
+
+# Reporte de porcentajes
 if porcentaje == 100:
 	print("Estás muy muy bien. Felicitaciones. :)")
 elif porcentaje < 100 and porcentaje >= 80:
@@ -212,3 +237,11 @@ print("")
 print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
+
+print(puntos_tramo)
+print(tramo)
+
+
+
+
+
