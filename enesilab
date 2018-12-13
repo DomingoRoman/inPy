@@ -230,6 +230,8 @@ elif porcentaje < 80 and porcentaje >= 50:
 elif porcentaje < 50:
 	print("La verdad es que estás muy mal. Tendrás que hacer algo.  :(")
 
+puntos_para_tramo = str(puntos_tramo)
+
 print("")
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print("")
@@ -241,8 +243,8 @@ print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
 
-print(puntos_tramo)
-print(tramo)
+print('Obtienes ponderados ' + puntos_tramo  'puntos, lo que te clasifica en el tramo ' + tramo)
+
 
 
 
