@@ -50,6 +50,7 @@ enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm.
                           "Creo que estás en un error...", "Simplemente no y no (no es no)"]
 
 # Listas de palabras
+# Listas de palabras
 una = ["ay", "baúl", "bien", "buen", "buey", "búho", "cae", "cien", "coa", "cuan", "diez", "dio", "dios", 
        "doy", "fue", "hay", "hiel", "hoy",  "juez", "laúd", "ley", "loa", "miau" ,"miel", "mohai", "neón", 
        "nuez", "pía", "pie", "piel", "púa", "pues", "quien", "riel", "roe", "ruin", "seis", "soez",
@@ -66,6 +67,7 @@ cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perd
            "aéreo", "venérea", "biología", "aparean", "caedizo", "saborear", "maestría"]
 cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
          "acarréanlo", "aleatorio","coordinación"]
+
 
 # longitudes de cada lista
 l_una = len(una)
