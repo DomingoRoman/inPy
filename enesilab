@@ -82,9 +82,12 @@ l_cinco = len(cinco)
 # aleatorización del número de preguntas
 ene_veces = random.randint(7, 20)
 
-print("Tendrás que responder",ene_veces,"preguntas")
-print("Verás una palabra y tendrás que decir cuántas sílabas tiene")
+print("Tendrás que responder",ene_veces,"preguntas.")
+print("Verás una palabra y tendrás que decir cuántas sílabas tiene.")
 print("...")
+print("Al final de la ejecución tendrás un reporte. Se te indicará número de aciertos y de errores.")
+print("También se indicará en qué tramo (A, B, C, D o E) clasificas.")
+print("En estas categorías, A es el mejor tramo y E, el peor")
 print(entrada)
 
 espera = (input())
