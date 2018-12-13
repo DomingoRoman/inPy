@@ -43,33 +43,37 @@ entrada = "Presiona ENTER"
 call("clear")
 
 # Enunciado respuesta correcta
-enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", "Excelente, excelente... muy bien", 
-                       "Efectivamente. Tu respuesta es correcta", "Lo hiciste bien. Muy bien"]
+enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", 
+		        "Excelente, excelente... muy bien", "Efectivamente. Tu respuesta es correcta", 
+			"Lo hiciste bien. Muy bien", "Afirmativo. Su respuesta es correcta"]
 
 # Enunciado respuesta incorrecta
 enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no.", 
-                          "Creo que estás en un error...", "Simplemente no y no (no es no)", "Para la próxima puede ser que te vaya mejor"]
+                          "Creo que estás en un error...", "Simplemente no y no (no es no)", 
+			  "Para la próxima puede ser que te vaya mejor", "Pensar y pensar para bien resolver"]
 
 # Listas de palabras
-# Listas de palabras
-una = ["ay", "bien", "buen", "buey","cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
-       "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", 
-       "seis", "soez", "soy",  "vial", "vio"]
+una = ["ay", "bien", "buen", "buey", "cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
+       "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
+       "soez", "soy",  "vial", "vio"]
 
 dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "cuento",
-       "creer", "cuatro", "diario", "fía", "guión", "laúd", "leer","leo", "lío", "loa", "Mario",  "mía", "mohai", "moho", 
-       "muere", "neón", "nueva", "nueve", "peor", "perdió", "piedra", "pía", "pierde", "premio","púa","roe", "sea", "tía", 
-       "vea", "veo", "vía","viuda"]
+       "creer", "cuatro", "deidad", "diario", "fía", "guión", "laúd", "leer","leo", "liana", "lío", "loa", "Mario",  "mía", 
+       "mohai", "moho", "muere", "necio", "neón", "nimio", "nueva", "nueve", "ocio", "peor", "perdió", "piedra", "pía", 
+       "pierde", "premio", "púa","roe", "sea", "tía", "traición", "trauma", "vea", "veo", "vía", "viuda"]
         
-tres = ["acuario", "acuosa",  "ahora", "apremio",  "área", "aseo", "ausencia","beato", "canoa" , "caoba", "careo", "causeo", 
-	"claudicar", "cuidado", "faena", "Lisboa", "marea", "mareo", "María","fealdad", "poema", "presea", "toalla", 
-	"recrear", "marear", "paella", "posee", "maestro", "óleo", "pétreo", "poeta", "saeta", "voleo"]
+tres = ["acuario", "acuosa", "ahora", "apremio", "área", "aseo", "ausencia", "auxilio", "beato", "canoa" , "caoba", "careo", 
+	"causeo", "claudicar", "creencia", "cuidado", "euforia", "faena", "fealdad", "huemules", "Lisboa", "maestro", 
+	"Mahoma", "marea", "marear", "mareo", "María", "poema", "presea", "recrear", "Suecia", "paella", "pasear", "posee", 
+	"óleo", "pétreo", "poeta", "saeta", "toalla", "vanguardia", "veintiocho", "veintiséis", "voleo"]
+
+cuatro = ["acueducto", "aéreo", "afectuoso", "almohada", "apalear", "aparean", "aureola", "australiano", "balneario", 
+	  "biología", "caedizo", "caería", "caótico", "causaría", "cuidaría", "demasiado", "estéreo", "europeo", 
+	  "laudatorio", "laureado", "maestría", "misionero", "mueblería", "perdiciones", "recaudación", "saborear",  
+	  "sinvergüenza", "tauromaquia", "venérea", "viajaría"]
           
-cuatro = ["acueducto", "aéreo", "apalear", "aparean", "biología", "caedizo", "caería", "causaría", "cuidaría", "demasiado", 
-	  "estéreo", "laudatorio", "maestría", "misionero", "mueblería", "perdiciones", "saborear",  "venérea", "viajaría"]
-          
-cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
-         "acarréanlo", "aleatorio","coordinación", "zoológico"]
+cinco = ["aeropuerto", "aovillado", "aleatorio", "afianzaría", "caleidoscopio", "pasteurizada","puerilidades", 
+	 "ecuanimidad", "eternidades", "claudicaría", "acarréanlo", "aleatorio","coordinación", "veinteañero", "zoológico"]
 
 
 # longitudes de cada lista
@@ -84,7 +88,7 @@ ene_veces = random.randint(5, 10)
 
 print("Tendrás que responder",ene_veces,"preguntas.")
 print("Verás una palabra y tendrás que decir cuántas sílabas tiene.")
-print("...")
+print("Las palabras que se te presentarán tienen entre una y cinco sílabas.")
 print("Al final de la ejecución tendrás un reporte. Se te indicará número de aciertos y de errores.")
 print("También se indicará en qué tramo (A, B, C, D o E) clasificas.")
 print("En estas categorías, A es el mejor tramo y E, el peor")
@@ -245,6 +249,11 @@ print(reporte07+ porcentaje_str + reporte08+'.')
 
 print('Obtienes ponderados ' + puntos_tramo  'puntos, lo que te clasifica en el tramo ' + tramo)
 
+print(l_una)
+print(l_dos)
+print(l_tres)
+print(l_cuatro)
+print(l_cinco)
 
 
 
