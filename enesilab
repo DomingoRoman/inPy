@@ -247,15 +247,11 @@ print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
 
-print('Obtienes ponderados ' + puntos_tramo  'puntos, lo que te clasifica en el tramo ' + tramo)
-
+print('Obtienes ponderados ' + puntos_para_tramo + 'puntos, lo que te clasifica en el tramo ' + tramo)
+print("#################")
+print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
 print(l_una)
 print(l_dos)
 print(l_tres)
 print(l_cuatro)
 print(l_cinco)
-
-
-
-
-
