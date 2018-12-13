@@ -50,16 +50,18 @@ enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm.
                           "Creo que estás en un error...", "Simplemente no y no (no es no)"]
 
 # Listas de palabras
-una = ["ay", "bien", "buey", "cien", "cuan", "diez", "dio", "dios", "doy", "fue", "hay", "hiel",
-       "hoy",  "juez", "ley", "miau" ,"miel", "nuez", "pie", "piel", "pues", "riel", "ruin", "seis", 
-       "soy", "quien", "vial", "vio"] 
+una = ["ay", "baúl", "bien", "buen", "buey", "búho", "cae", "cien", "coa", "cuan", "diez", "dio", "dios", 
+       "doy", "fue", "hay", "hiel", "hoy",  "juez", "laúd", "ley", "loa", "miau" ,"miel", "mohai", "neón", 
+       "nuez", "pía", "pie", "piel", "púa", "pues", "quien", "riel", "roe", "ruin", "seis", "soez",
+       "soy", "veo", "vía", "vial", "vio"] 
+
 dos = ["agua",  "aún", "boa", "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "creer", 
-        "cuatro", "diario", "fía", "guión", "leer","leo", "Mario",  "mía",  "moho", "muere", "nueva", 
-        "nueve", "piedra", "pierde",  "peor", "perdió", "pua", "vea", "viuda"]
+        "cuatro", "diario", "fía", "guión", "leer","leo", "lío", "loa", "Mario",  "mía",  "moho", "muere", "nueva", 
+        "nueve", "peor", "perdió", "piedra", "pía", "pierde","vea", "viuda"]
         
-tres = [ "acuario", "acuosa",  "ahora", "área",  "beato", "caoba",  "causeo", "cuidado",  "faena", 
-         "poema", "Lisboa", "María","fealdad", "presea", "toalla", "recrear", "marear", "paella",
-         "posee", "maestro"]
+tres = [ "acuario", "acuosa",  "ahora", "área", "aseo", "beato", "caoba",  "causeo", "cuidado",  "faena", 
+         "Lisboa", "María","fealdad", "poema", "presea", "toalla", "recrear", "marear", "paella", "posee", 
+         "maestro", "óleo", "pétreo", "saeta"]
 cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perdiciones", "mueblería",
            "aéreo", "venérea", "biología", "aparean", "caedizo", "saborear", "maestría"]
 cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
@@ -169,16 +171,12 @@ cuantas_preguntas = str(ene_veces)
 cuantas_incorrectas =str(contador_incorrectas)
 cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
 
-if tiempo_por_pregunta <= 1:
+if tiempo_por_pregunta <= 3:
 	evaluacion_tiempo = "rápido"
-elif tiempo_por_pregunta > 1 and tiempo_por_pregunta < 2:
+elif tiempo_por_pregunta > 3 and tiempo_por_pregunta < 6:
 	evaluacion_tiempo = "regular"
-elif tiempo_por_pregunta >= 2:
+elif tiempo_por_pregunta >= 6:
 	evaluacion_tiempo = "lento"
-
-
-
-
 
 
 # porcentaje de acierto
@@ -209,3 +207,4 @@ print("")
 print("Lo que se considera más bien...")
 print(evaluacion_tiempo)
 print(reporte07+ porcentaje_str + reporte08)
+
