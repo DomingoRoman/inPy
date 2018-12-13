@@ -56,17 +56,17 @@ una = ["ay", "bien", "buen", "buey","cien",  "cuan", "diez", "dio", "dios", "doy
        "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", 
        "seis", "soez", "soy",  "vial", "vio"]
 
-dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "creer", 
-       "cuatro", "diario", "fía", "guión", "laúd", "leer","leo", "lío", "loa", "Mario",  "mía", "mohai", "moho", "muere", 
-       "neón", "nueva", "nueve", "peor", "perdió", "piedra", "pía", "pierde", "premio","púa","roe", "sea", "tía", "vea", 
-       "veo", "vía","viuda"]
+dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "cuento",
+       "creer", "cuatro", "diario", "fía", "guión", "laúd", "leer","leo", "lío", "loa", "Mario",  "mía", "mohai", "moho", 
+       "muere", "neón", "nueva", "nueve", "peor", "perdió", "piedra", "pía", "pierde", "premio","púa","roe", "sea", "tía", 
+       "vea", "veo", "vía","viuda"]
         
-tres = ["acuario", "acuosa",  "ahora", "apremio",  "área", "aseo", "ausencia","beato", "canoa" , "caoba", "causeo", "cuidado", "faena", 
-        "Lisboa", "María","fealdad", "poema", "presea", "toalla", "recrear", "marear", "paella", "posee", 
-        "maestro", "óleo", "pétreo", "poeta", "saeta", "voleo"]
+tres = ["acuario", "acuosa",  "ahora", "apremio",  "área", "aseo", "ausencia","beato", "canoa" , "caoba", "careo", "causeo", 
+	"claudicar", "cuidado", "faena", "Lisboa", "marea", "mareo", "María","fealdad", "poema", "presea", "toalla", 
+	"recrear", "marear", "paella", "posee", "maestro", "óleo", "pétreo", "poeta", "saeta", "voleo"]
           
-cuatro = ["acueducto", "aéreo", "aparean", "biología", "caedizo", "caería", "causaría", "cuidaría", "demasiado", "estéreo",
-          "laudatorio", "maestría", "misionero", "mueblería", "perdiciones", "saborear",  "venérea", "viajaría"]
+cuatro = ["acueducto", "aéreo", "apalear", "aparean", "biología", "caedizo", "caería", "causaría", "cuidaría", "demasiado", 
+	  "estéreo", "laudatorio", "maestría", "misionero", "mueblería", "perdiciones", "saborear",  "venérea", "viajaría"]
           
 cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
          "acarréanlo", "aleatorio","coordinación", "zoológico"]
@@ -80,7 +80,7 @@ l_cuatro = len(cuatro)
 l_cinco = len(cinco)
 
 # aleatorización del número de preguntas
-ene_veces = random.randint(7, 20)
+ene_veces = random.randint(5, 10)
 
 print("Tendrás que responder",ene_veces,"preguntas.")
 print("Verás una palabra y tendrás que decir cuántas sílabas tiene.")
