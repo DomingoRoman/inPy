@@ -34,9 +34,10 @@ reporte02 = " respuestas correctas de un total de "
 reporte03 = "Has tenido "
 
 reporte05 = "Demoras "
-reporte06 = " segundos aproximadamente en cada respuesta."
+reporte06 = " segundos aproximadamente en cada respuesta"
+reporte06a = "Lo que se considera "
 reporte07 = "Tu porcentaje de logro es de "
-reporte08 = " por ciento."
+reporte08 = " por ciento"
 entrada = "Presiona ENTER"
 
 call("clear")
@@ -47,26 +48,28 @@ enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No p
 
 # Enunciado respuesta incorrecta
 enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no.", 
-                          "Creo que estás en un error...", "Simplemente no y no (no es no)"]
+                          "Creo que estás en un error...", "Simplemente no y no (no es no)", "Para la próxima puede ser que te vaya mejor"]
 
 # Listas de palabras
 # Listas de palabras
-una = ["ay", "baúl", "bien", "buen", "buey", "búho", "cae", "cien", "coa", "cuan", "diez", "dio", "dios", 
-       "doy", "fue", "hay", "hiel", "hoy",  "juez", "laúd", "ley", "loa", "miau" ,"miel", "mohai", "neón", 
-       "nuez", "pía", "pie", "piel", "púa", "pues", "quien", "riel", "roe", "ruin", "seis", "soez",
-       "soy", "veo", "vía", "vial", "vio"] 
+una = ["ay", "bien", "buen", "buey","cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
+       "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", 
+       "seis", "soez", "soy",  "vial", "vio"]
 
-dos = ["agua",  "aún", "boa", "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "creer", 
-        "cuatro", "diario", "fía", "guión", "leer","leo", "lío", "loa", "Mario",  "mía",  "moho", "muere", "nueva", 
-        "nueve", "peor", "perdió", "piedra", "pía", "pierde","vea", "viuda"]
+dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "creer", 
+       "cuatro", "diario", "fía", "guión", "laúd", "leer","leo", "lío", "loa", "Mario",  "mía", "mohai", "moho", "muere", 
+       "neón", "nueva", "nueve", "peor", "perdió", "piedra", "pía", "pierde", "premio","púa","roe", "sea", "tía", "vea", 
+       "veo", "vía","viuda"]
         
-tres = [ "acuario", "acuosa",  "ahora", "área", "aseo", "beato", "caoba",  "causeo", "cuidado",  "faena", 
-         "Lisboa", "María","fealdad", "poema", "presea", "toalla", "recrear", "marear", "paella", "posee", 
-         "maestro", "óleo", "pétreo", "saeta"]
-cuatro = ["viajaría", "demasiado", "cuidaría", "misionero", "acueducto", "perdiciones", "mueblería",
-           "aéreo", "venérea", "biología", "aparean", "caedizo", "saborear", "maestría"]
+tres = ["acuario", "acuosa",  "ahora", "apremio",  "área", "aseo", "ausencia","beato", "canoa" , "caoba", "causeo", "cuidado", "faena", 
+        "Lisboa", "María","fealdad", "poema", "presea", "toalla", "recrear", "marear", "paella", "posee", 
+        "maestro", "óleo", "pétreo", "poeta", "saeta", "voleo"]
+          
+cuatro = ["acueducto", "aéreo", "aparean", "biología", "caedizo", "caería", "causaría", "cuidaría", "demasiado", "estéreo",
+          "laudatorio", "maestría", "misionero", "mueblería", "perdiciones", "saborear",  "venérea", "viajaría"]
+          
 cinco = ["aovillado", "aleatorio", "afianzaría", "puerilidades", "ecuanimidad", "eternidades", "claudicaría",
-         "acarréanlo", "aleatorio","coordinación"]
+         "acarréanlo", "aleatorio","coordinación", "zoológico"]
 
 
 # longitudes de cada lista
@@ -162,7 +165,7 @@ tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
 if contador_incorrectas == 0:
     reporte04 = " equivocación"
 elif contador_incorrectas == 1:
-    reporte04 = " equivocación."
+    reporte04 = " equivocación"
 elif contador_incorrectas > 1:
     reporte04 = "equivocaciones"
 	
@@ -202,11 +205,10 @@ elif porcentaje < 50:
 print("")
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print("")
-print(reporte03 + cuantas_incorrectas+ reporte04)
+print(reporte03 + cuantas_incorrectas+ reporte04+'.')
 print("")
-print(reporte05 + cuanto_tiempo_por_pregunta+reporte06)
+print(reporte05 + cuanto_tiempo_por_pregunta+reporte06+'.')
 print("")
-print("Lo que se considera más bien...")
-print(evaluacion_tiempo)
-print(reporte07+ porcentaje_str + reporte08)
-
+print(reporte06a + evaluacion_tiempo+'.')
+print("")
+print(reporte07+ porcentaje_str + reporte08+'.')
