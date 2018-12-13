@@ -219,11 +219,6 @@ elif puntos_tramo < 40 and puntos_tramo >= 20:
 elif puntos_tramo < 20 and puntos_tramo > 0:
 	tramo = "E"
 
-
-
-
-
-
 # Reporte de porcentajes
 if porcentaje == 100:
 	print("Estás muy muy bien. Felicitaciones. :)")
@@ -249,9 +244,9 @@ print(reporte07+ porcentaje_str + reporte08+'.')
 
 print('Obtienes ponderados ' + puntos_para_tramo + 'puntos, lo que te clasifica en el tramo ' + tramo)
 print("#################")
-print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
-print(l_una)
-print(l_dos)
-print(l_tres)
-print(l_cuatro)
-print(l_cinco)
+# print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
+# print(l_una)
+# print(l_dos)
+# print(l_tres)
+# print(l_cuatro)
+# print(l_cinco)
