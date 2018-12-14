@@ -1,0 +1,266 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#  eneDeSilabas.py
+#  
+#  Copyright 2018 Pedro Domingo Roman <historiadores@iMac-de-Pedro.local>
+#  
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+#  
+#  
+
+import pdb
+from subprocess import call
+import random
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Limpiar la pantalla 
+
+reporte01 = "Has respondido "
+reporte02 = " respuestas correctas de un total de "
+reporte03 = "Has tenido "
+
+reporte05 = "Demoras "
+reporte06 = " segundos aproximadamente en cada respuesta"
+reporte06a = "Lo que se considera "
+reporte07 = "Tu porcentaje de logro es de "
+reporte08 = " por ciento"
+entrada = "Presiona ENTER"
+
+call("clear")
+
+# Enunciado respuesta correcta
+enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", 
+		        "Excelente, excelente... muy bien", "Efectivamente. Tu respuesta es correcta", 
+			"Lo hiciste bien. Muy bien", "Afirmativo. Su respuesta es correcta"]
+
+# Enunciado respuesta incorrecta
+enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no.", 
+                          "Creo que estás en un error...", "Simplemente no y no (no es no)", 
+			  "Para la próxima puede ser que te vaya mejor", "Pensar y pensar para bien resolver"]
+
+# Listas de palabras
+una = ["ay", "bien", "buen", "buey", "cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
+       "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
+       "soez", "soy",  "vial", "vio"]
+
+dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "cuento",
+       "creer", "cuatro", "deidad", "diario", "fía", "guión", "laúd", "leer","leo", "liana", "lío", "loa", "Mario",  "mía", 
+       "mohai", "moho", "muere", "necio", "neón", "nimio", "nueva", "nueve", "ocio", "peor", "perdió", "piedra", "pía", 
+       "pierde", "premio", "púa","roe", "sea", "tía", "traición", "trauma", "vea", "veo", "vía", "viuda"]
+        
+tres = ["acuario", "acuosa", "ahora", "apremio", "área", "aseo", "ausencia", "auxilio", "beato", "canoa" , "caoba", "careo", 
+	"causeo", "claudicar", "creencia", "cuidado", "euforia", "faena", "fealdad", "huemules", "Lisboa", "maestro", 
+	"Mahoma", "marea", "marear", "mareo", "María", "poema", "presea", "recrear", "Suecia", "paella", "pasear", "posee", 
+	"óleo", "pétreo", "poeta", "saeta", "toalla", "vanguardia", "veintiocho", "veintiséis", "voleo"]
+
+cuatro = ["acueducto", "aéreo", "afectuoso", "almohada", "apalear", "aparean", "aureola", "australiano", "balneario", 
+	  "biología", "caedizo", "caería", "caótico", "causaría", "cuidaría", "demasiado", "estéreo", "europeo", 
+	  "laudatorio", "laureado", "maestría", "misionero", "mueblería", "perdiciones", "recaudación", "saborear",  
+	  "sinvergüenza", "tauromaquia", "venérea", "viajaría"]
+          
+cinco = ["aeropuerto", "aovillado", "aleatorio", "afianzaría", "caleidoscopio", "pasteurizada","puerilidades", 
+	 "ecuanimidad", "eternidades", "claudicaría", "acarréanlo", "aleatorio","coordinación", "veinteañero", "zoológico"]
+
+
+# longitudes de cada lista
+l_una = len(una)
+l_dos = len(dos)
+l_tres = len(tres)
+l_cuatro = len(cuatro)
+l_cinco = len(cinco)
+
+# aleatorización del número de preguntas
+ene_veces = random.randint(5, 10)
+
+print("Tendrás que responder",ene_veces,"preguntas.")
+print("Verás una palabra y tendrás que decir cuántas sílabas tiene.")
+print("Las palabras que se te presentarán tienen entre una y cinco sílabas.")
+print("Al final de la ejecución tendrás un reporte. Se te indicará número de aciertos y de errores.")
+print("También se indicará en qué tramo (A, B, C, D o E) clasificas.")
+print("En estas categorías, A es el mejor tramo y E, el peor")
+print(entrada)
+
+espera = (input())
+
+contador_correctas = 0
+contador_incorrectas = 0
+
+inicio = time.time()
+
+for i in range(ene_veces):
+    call("clear")
+    print("Escribe el número de sílabas")
+    categoria = random.randint(1, 5)
+    if categoria == 1:
+        cat_preg = una
+    if categoria == 2:
+        cat_preg = dos
+    if categoria == 3: 
+        cat_preg = tres
+    if categoria == 4:
+        cat_preg = cuatro
+    if categoria == 5:
+        cat_preg = cinco
+
+    n_sel_item = random.randint(1, 5)
+    qu = cat_preg[n_sel_item]
+
+    print(qu) 
+    resp = int(input())
+
+    if cat_preg == una and resp == 1:
+       contador_correctas = contador_correctas + 1
+       print(random.choice(enunciados_correctas))
+       espera = (input("Presiona enter"))
+    elif cat_preg == una and resp != 1:
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))    
+    if cat_preg == dos and resp == 2:
+       contador_correctas = contador_correctas + 1
+       print(random.choice(enunciados_correctas))
+       espera = (input("Presiona enter"))
+    elif cat_preg == dos and resp != 2:
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))      
+    if cat_preg == tres and resp == 3:
+       contador_correctas = contador_correctas + 1
+       print(random.choice(enunciados_correctas))
+       espera = (input("Presiona enter"))
+    elif cat_preg == tres and resp != 3:
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))       
+    if cat_preg == cuatro and resp == 4:
+       contador_correctas = contador_correctas + 1
+       print(random.choice(enunciados_correctas))
+       espera = (input("Presiona enter"))
+    elif cat_preg == cuatro and resp != 4:
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))
+    if cat_preg == cinco and resp == 5:
+       contador_correctas = contador_correctas + 1
+       print(random.choice(enunciados_correctas))
+       espera = (input("Presiona enter"))
+    elif cat_preg == cinco and resp != 5:
+       contador_incorrectas = contador_incorrectas + 1 
+       print(random.choice(enunciados_incorrectas))
+       espera = (input("Presiona enter"))
+
+final = time.time()
+
+# cuenta el tiempo del proceso total
+tiempo_total = final-inicio
+tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
+
+if contador_incorrectas == 0:
+    reporte04 = " equivocación"
+elif contador_incorrectas == 1:
+    reporte04 = " equivocación"
+elif contador_incorrectas > 1:
+    reporte04 = "equivocaciones"
+	
+
+	
+cuantas_correctas =str(contador_correctas)
+cuantas_preguntas = str(ene_veces)
+cuantas_incorrectas =str(contador_incorrectas)
+cuanto_tiempo_por_pregunta = str(tiempo_por_pregunta)
+
+if tiempo_por_pregunta <= 3:
+	evaluacion_tiempo = "rápido"
+elif tiempo_por_pregunta > 3 and tiempo_por_pregunta < 6:
+	evaluacion_tiempo = "regular"
+elif tiempo_por_pregunta >= 6:
+	evaluacion_tiempo = "lento"
+
+
+# porcentaje de acierto
+porcentaje = contador_correctas *100/ ene_veces
+# a dos decimales
+porcentaje = round(porcentaje,2)
+# convertir a string
+porcentaje_str = str(porcentaje)
+
+call("clear")
+
+##########################
+# reporte fino
+##
+# establece tramo
+##
+
+puntos_tramo = porcentaje/tiempo_por_pregunta
+
+if puntos_tramo >= 80:
+	tramo = "A"
+elif puntos_tramo < 80 and puntos_tramo >= 60:
+	tramo = "B"
+elif puntos_tramo < 60 and puntos_tramo >= 40:
+	tramo = "C"
+elif puntos_tramo < 40 and puntos_tramo >= 20:
+	tramo = "D"
+elif puntos_tramo < 20 and puntos_tramo > 0:
+	tramo = "E"
+
+# Reporte de porcentajes
+if porcentaje == 100:
+	print("Estás muy muy bien. Felicitaciones. :)")
+elif porcentaje < 100 and porcentaje >= 80:
+	print("Estás bien; aunque puedes mejorar un poco todavía. ;)")
+elif porcentaje < 80 and porcentaje >= 50:
+	print("Tendrás que mejorar bastante :/")
+elif porcentaje < 50:
+	print("La verdad es que estás muy mal. Tendrás que hacer algo.  :(")
+
+puntos_para_tramo = str(puntos_tramo)
+
+print("")
+print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
+print("")
+print(reporte03 + cuantas_incorrectas+ reporte04+'.')
+print("")
+print(reporte05 + cuanto_tiempo_por_pregunta+reporte06+'.')
+print("")
+print(reporte06a + evaluacion_tiempo+'.')
+print("")
+print(reporte07+ porcentaje_str + reporte08+'.')
+
+print('Obtienes ponderados ' + puntos_para_tramo + 'puntos, lo que te clasifica en el tramo ' + tramo)
+print("#################")
+# print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
+# print(l_una)
+# print(l_dos)
+# print(l_tres)
+# print(l_cuatro)
+# print(l_cinco)
+
+
+variables = ("Tiempo de respuesta", "referencia máxima","Porcentaje de logro", "Puntaje ponderado")
+posicion_y = np.arange(len(variables))
+unidades = (tiempo_por_pregunta, 100, porcentaje, puntos_tramo)
+plt.bar(posicion_y, unidades, align = "center")
+
+###plt.yticks(posicion_y, variables)
+
+plt.title("Resultados")
+plt.xlabel("Tiempo de respuesta, REFERENCIA, porcentaje de aciertos, puntaje ponderado")
+plt.show()
