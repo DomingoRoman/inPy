@@ -46,7 +46,7 @@ call("clear")
 print("Primera pregunta: ¿es un adverbio terminado en 'mente', como:\n 'velozmente', 'sutilmente', etc?")
 print(" presione 1 si la respuesta es 'Sí' o presione '0' si la respuesta es 'NO' ")
 
-adverbio_terminado_en_mente=int(input())
+adverbio_terminado_en_mente=raw_input()
 
 if adverbio_terminado_en_mente == 1:
 	print("Considere de aquí en adelante solo la parte de la palabra que está antes de la terminación 'MENTE' ")
@@ -130,6 +130,3 @@ elif cerradaTonicaMasAbierta == 0:
             print(graveSinAcento)
         else:
             print(graveConAcento)
-
-
-
