@@ -171,7 +171,7 @@ final = time.time()
 tiempo_total = final-inicio
 tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
 
-if tiempo_por_pregunta >= 1 and tiempo_por_pregunta <= 5:
+if tiempo_por_pregunta >= 0.0001 and tiempo_por_pregunta <= 5:
 	tiempo_maximo = 8
 elif tiempo_por_pregunta > 5 and tiempo_por_pregunta <= 10:
 	tiempo_maximo = 10
@@ -223,18 +223,22 @@ call("clear")
 # establece tramo
 ##
 
+# tramo A: mayor o igual a 50
+# tramo B: entre 50 y 25
+
 puntos_tramo = porcentaje/tiempo_por_pregunta
 
-if puntos_tramo >= 80:
+if puntos_tramo >= 50:
 	tramo = "A"
-elif puntos_tramo < 80 and puntos_tramo >= 60:
+elif puntos_tramo < 50 and puntos_tramo >= 25:
 	tramo = "B"
-elif puntos_tramo < 60 and puntos_tramo >= 40:
+elif puntos_tramo < 25 and puntos_tramo >= 16:
 	tramo = "C"
-elif puntos_tramo < 40 and puntos_tramo >= 20:
+elif puntos_tramo < 16 and puntos_tramo >= 12:
 	tramo = "D"
-elif puntos_tramo < 20 and puntos_tramo > 0:
+elif puntos_tramo < 12 and puntos_tramo >= 0:
 	tramo = "E"
+
 
 # Reporte de porcentajes
 if porcentaje == 100:
@@ -248,6 +252,7 @@ elif porcentaje < 50:
 
 puntos_para_tramo = str(puntos_tramo)
 
+
 print("")
 print(reporte01+ cuantas_correctas+reporte02+cuantas_preguntas+'.')
 print("")
@@ -259,7 +264,7 @@ print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
 
-print('Obtienes ponderados ' + puntos_para_tramo + 'puntos, lo que te clasifica en el tramo ' + tramo)
+print('Obtienes ponderados ' + puntos_para_tramo + ' puntos, lo que te clasifica en el tramo ' + tramo)
 print("#################")
 # print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
 # print(l_una)
@@ -301,9 +306,20 @@ plt.bar(1, porcentaje)
 # tercer gráfico
 
 plt.subplot(1,3,3)
+
+# alto: ('E', 'D', 'C', 'B', 'A')
+
+#  E: 100 (75)
+#  D: 50 (37.5)
+#  C: 25 (20.5)
+#  B: 16 (14) 
+#  A: 12 (6)
+
+
 plt.bar(1,puntos_tramo, color = "r")
+plt.grid(True)
 plt.ylim(0,100)
-plt.yticks([])
+#plt.yticks([])
 plt.xticks([])
-plt.xlabel("Tramo")
+plt.ylabel("Tramos")
 plt.show()
