@@ -307,4 +307,3 @@ plt.yticks([])
 plt.xticks([])
 plt.xlabel("Tramo")
 plt.show()
-
