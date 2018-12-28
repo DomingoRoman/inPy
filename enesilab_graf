@@ -171,6 +171,21 @@ final = time.time()
 tiempo_total = final-inicio
 tiempo_por_pregunta = round(tiempo_total/ene_veces,3)
 
+if tiempo_por_pregunta >= 1 and tiempo_por_pregunta <= 5:
+	tiempo_maximo = 8
+elif tiempo_por_pregunta > 5 and tiempo_por_pregunta <= 10:
+	tiempo_maximo = 10
+elif tiempo_por_pregunta > 10 and tiempo_por_pregunta <= 20:
+	tiempo_maximo = 20
+elif tiempo_por_pregunta > 20:
+	tiempo_maximo = 50
+
+
+
+
+
+
+
 if contador_incorrectas == 0:
     reporte04 = " equivocación"
 elif contador_incorrectas == 1:
@@ -253,14 +268,43 @@ print("#################")
 # print(l_cuatro)
 # print(l_cinco)
 
+###############
+###############   GRAFICOS
+###############
 
-variables = ("Tiempo de respuesta", "referencia máxima","Porcentaje de logro", "Puntaje ponderado")
-posicion_y = np.arange(len(variables))
-unidades = (tiempo_por_pregunta, 100, porcentaje, puntos_tramo)
-plt.bar(posicion_y, unidades, align = "center")
+# una fila, 3 col, este graf en primera posicion
+plt.subplot(1,3,1)
 
-###plt.yticks(posicion_y, variables)
+plt.bar(1,tiempo_por_pregunta, color = "g")
+plt.ylim(0,tiempo_maximo)
 
-plt.title("Resultados")
-plt.xlabel("Tiempo de respuesta, REFERENCIA, porcentaje de aciertos, puntaje ponderado")
+# elimina marcas en eje x. Para eliminar en y: plt.yticks([])
+plt.xticks([])
+plt.xlabel("Demora")
+plt.ylabel("Segundos")
+
+
+# segundo gráfico
+plt.subplot(1,3,2)
+
+#altura = [porcentaje]
+
+plt.ylim(0,100)
+plt.yticks([])
+plt.xticks([])
+plt.xlabel("Logro")
+plt.title("Máx: 100%")
+plt.bar(1, porcentaje)
+
+
+
+# tercer gráfico
+
+plt.subplot(1,3,3)
+plt.bar(1,puntos_tramo, color = "r")
+plt.ylim(0,100)
+plt.yticks([])
+plt.xticks([])
+plt.xlabel("Tramo")
 plt.show()
+
