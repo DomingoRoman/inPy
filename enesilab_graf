@@ -317,9 +317,14 @@ plt.subplot(1,3,3)
 
 
 plt.bar(1,puntos_tramo, color = "r")
-plt.grid(True)
+
 plt.ylim(0,100)
-#plt.yticks([])
+plt.yticks([])
 plt.xticks([])
-plt.ylabel("Tramos")
+plt.xlabel("Tramos")
+plt.twinx()
+plt.ylim(0,100)
+plt.grid(True)
+plt.ylabel("trammo")
+
 plt.show()
