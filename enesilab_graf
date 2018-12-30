@@ -86,7 +86,7 @@ l_cuatro = len(cuatro)
 l_cinco = len(cinco)
 
 # aleatorización del número de preguntas
-ene_veces = random.randint(5, 10)
+ene_veces = random.randint(5, 12)
 
 print("Tendrás que responder",ene_veces,"preguntas.")
 print("Verás una palabra y tendrás que decir cuántas sílabas tiene.")
@@ -228,6 +228,16 @@ call("clear")
 
 puntos_tramo = porcentaje/tiempo_por_pregunta
 
+
+# los tramos
+#  A: 100
+#  B:  50
+#  C:  25
+#  D:  16
+#  E:  12
+
+
+
 if puntos_tramo >= 50:
 	tramo = "A"
 elif puntos_tramo < 50 and puntos_tramo >= 25:
@@ -287,7 +297,7 @@ plt.ylim(0,tiempo_maximo)
 plt.xticks([])
 plt.xlabel("Demora")
 plt.ylabel("Segundos")
-
+plt.grid(True)
 
 # segundo gráfico
 plt.subplot(1,3,2)
@@ -297,34 +307,45 @@ plt.subplot(1,3,2)
 plt.ylim(0,100)
 plt.yticks([])
 plt.xticks([])
-plt.xlabel("Logro")
-plt.title("Máx: 100%")
+plt.xlabel("Logro (máx = 100%)")
 plt.bar(1, porcentaje)
-
-
 
 # tercer gráfico
 
 plt.subplot(1,3,3)
 
-# alto: ('E', 'D', 'C', 'B', 'A')
+
+# los tramos. límite superior y la posición de la letra.
 
 #  E: 100 (75)
 #  D: 50 (37.5)
-#  C: 25 (20.5)
-#  B: 16 (14) 
+#  C: 25 (20)
+#  B: 16 (13.5) 
 #  A: 12 (6)
-
 
 plt.bar(1,puntos_tramo, color = "r")
 
 plt.ylim(0,100)
 plt.yticks([])
 plt.xticks([])
-plt.xlabel("Tramos")
+plt.xlabel("Tramo")
+
+# nuevo eje Y
 plt.twinx()
 plt.ylim(0,100)
+
+
+# Rectángulos con Alpha (transparencia de color)
+plt.axhspan(0,12, facecolor = "green", alpha =0.3)
+plt.axhspan(16,25,alpha =0.2)
+plt.axhspan(50,100, facecolor = "green", alpha =0.1)
+plt.text(0.5, 75, "A", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 36, "B", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 20, "C", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 13.5, "D", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 6, "E", fontsize=10, horizontalalignment='center', verticalalignment='center')
+
 plt.grid(True)
-plt.ylabel("trammo")
+plt.ylabel("Desempeño ponderado")
 
 plt.show()
