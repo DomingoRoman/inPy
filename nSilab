@@ -74,8 +74,9 @@ cuatro = ["acueducto", "aéreo", "afectuoso", "almohada", "apalear", "aparean", 
 	  "laudatorio", "laureado", "maestría", "misionero", "mueblería", "perdiciones", "recaudación", "saborear",  
 	  "sinvergüenza", "tauromaquia", "venérea", "viajaría"]
           
-cinco = ["aeropuerto", "aovillado", "aleatorio", "afianzaría", "caleidoscopio", "pasteurizada","puerilidades", 
-	 "ecuanimidad", "eternidades", "claudicaría", "acarréanlo", "aleatorio","coordinación", "veinteañero", "zoológico"]
+cinco = [ "acarréanlo", "aeropuerto", "aleatorio", "afianzaría", "airearían", "aovillado", "caleidoscopio", 
+	 "claudicaría", "coartarían", "coordenadas", "coordinación", "ecuanimidad", "eternidades", "pasteurizada",
+	 "puerilidades", "veinteañero", "zoológico"]
 
 
 # longitudes de cada lista
