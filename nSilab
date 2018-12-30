@@ -110,16 +110,22 @@ for i in range(ene_veces):
     categoria = random.randint(1, 5)
     if categoria == 1:
         cat_preg = una
+        largo = l_una
     if categoria == 2:
         cat_preg = dos
+        largo = l_dos
     if categoria == 3: 
         cat_preg = tres
+        largo = l_tres
     if categoria == 4:
         cat_preg = cuatro
+        largo = l_cuatro
     if categoria == 5:
         cat_preg = cinco
+        largo = l_cinco
 
-    n_sel_item = random.randint(1, 5)
+    n_sel_item = random.randint(0, largo)
+    
     qu = cat_preg[n_sel_item]
 
     print(qu) 
@@ -182,11 +188,6 @@ elif tiempo_por_pregunta > 20:
 	tiempo_maximo = 50
 
 
-
-
-
-
-
 if contador_incorrectas == 0:
     reporte04 = " equivocación"
 elif contador_incorrectas == 1:
@@ -229,14 +230,12 @@ call("clear")
 
 puntos_tramo = porcentaje/tiempo_por_pregunta
 
-
 # los tramos
 #  A: 100
 #  B:  50
 #  C:  25
 #  D:  16
 #  E:  12
-
 
 
 if puntos_tramo >= 50:
