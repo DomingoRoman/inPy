@@ -260,7 +260,7 @@ elif porcentaje < 80 and porcentaje >= 50:
 elif porcentaje < 50:
 	print("La verdad es que estás muy mal. Tendrás que hacer algo.  :(")
 
-puntos_para_tramo = str(puntos_tramo)
+puntos_para_tramo = str(round(puntos_tramo,2))
 
 
 print("")
@@ -273,7 +273,7 @@ print("")
 print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
-
+print("")
 print('Obtienes ponderados ' + puntos_para_tramo + ' puntos, lo que te clasifica en el tramo ' + tramo)
 print("#################")
 # print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
