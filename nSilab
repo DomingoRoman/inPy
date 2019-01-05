@@ -128,10 +128,6 @@ for i in range(ene_veces):
 
     qu = cat_preg[n_sel_item]
 
-
-    print(n_sel_item)
-    print(cat_preg)
-
     print(qu) 
     resp = int(input())
 
