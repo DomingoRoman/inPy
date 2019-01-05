@@ -46,23 +46,23 @@ call("clear")
 
 # Enunciado respuesta correcta
 enunciados_correctas = ["Veo que respondes bastante bien", "Felicitaciones. No pensé que responderías bien", 
-		        "Excelente, excelente... muy bien", "Efectivamente. Tu respuesta es correcta", 
-			"Lo hiciste bien. Muy bien", "Afirmativo. Su respuesta es correcta"]
+                        "Excelente, excelente... muy bien", "Efectivamente. Tu respuesta es correcta", 
+                        "Lo hiciste bien. Muy bien", "Afirmativo. Su respuesta es correcta"]
 
 # Enunciado respuesta incorrecta
 enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm... la verdad es que no.", 
                           "Creo que estás en un error...", "Simplemente no y no (no es no)", 
-			  "Para la próxima puede ser que te vaya mejor", "Pensar y pensar para bien resolver"]
+                          "Para la próxima puede ser que te vaya mejor", "Pensar y pensar para bien resolver"]
 
 # Listas de palabras
 una = ["ay", "bien", "buen", "buey", "cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
-       "juez", "ley", "loa", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
-       "soez", "soy",  "vial", "vio"]
+       "juez", "ley", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
+        "soy",  "vial", "vio"]
 
 dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "cuento",
        "creer", "cuatro", "deidad", "diario", "fía", "guión", "laúd", "leer","leo", "liana", "lío", "loa", "Mario",  "mía", 
        "mohai", "moho", "muere", "necio", "neón", "nimio", "nueva", "nueve", "ocio", "peor", "perdió", "piedra", "pía", 
-       "pierde", "premio", "púa","roe", "sea", "tía", "traición", "trauma", "vea", "veo", "vía", "viuda"]
+       "pierde", "premio", "púa","roe", "sea", "soez", "tía", "traición", "trauma", "vea", "veo", "vía", "viuda"]
         
 tres = ["acuario", "acuosa", "ahora", "apremio", "área", "aseo", "ausencia", "auxilio", "beato", "canoa" , "caoba", "careo", 
 	"causeo", "claudicar", "creencia", "cuidado", "euforia", "faena", "fealdad", "huemules", "Lisboa", "maestro", 
@@ -110,23 +110,27 @@ for i in range(ene_veces):
     categoria = random.randint(1, 5)
     if categoria == 1:
         cat_preg = una
-        largo = l_una
+        largo = l_una-1
     if categoria == 2:
         cat_preg = dos
-        largo = l_dos
+        largo = l_dos-1
     if categoria == 3: 
         cat_preg = tres
-        largo = l_tres
+        largo = l_tres-1
     if categoria == 4:
         cat_preg = cuatro
-        largo = l_cuatro
+        largo = l_cuatro-1
     if categoria == 5:
         cat_preg = cinco
-        largo = l_cinco
+        largo = l_cinco-1
 
     n_sel_item = random.randint(0, largo)
-    
+
     qu = cat_preg[n_sel_item]
+
+
+    print(n_sel_item)
+    print(cat_preg)
 
     print(qu) 
     resp = int(input())
@@ -230,24 +234,46 @@ call("clear")
 
 puntos_tramo = porcentaje/tiempo_por_pregunta
 
+
+puntos_tramos = (porcentaje + tiempo_por_pregunta)/2
+
+### con sistema Camilo Quezada
+if puntos_tramos <= 100 and puntos_tramos >= 80:
+	tramo2 = "A"
+elif puntos_tramos < 80 and puntos_tramos >= 60:
+	tramo2 = "B"
+elif puntos_tramos < 60 and puntos_tramos >= 40:
+	tramo2 = "C"
+elif puntos_tramos < 40 and puntos_tramos >= 20:
+	tramo2 = "D"
+elif puntos_tramos < 20 and puntos_tramos >= 0:
+	tramo2 = "E"
+
+
+
+
+
+
+
+
 # los tramos
-#  A: 100
-#  B:  50
-#  C:  25
-#  D:  16
-#  E:  12
+#  A: 100-80
+#  B:  80-60
+#  C:  60-40
+#  D:  40-20
+#  E:  20-0
 
 
-if puntos_tramo >= 50:
-	tramo = "A"
-elif puntos_tramo < 50 and puntos_tramo >= 25:
-	tramo = "B"
-elif puntos_tramo < 25 and puntos_tramo >= 16:
-	tramo = "C"
-elif puntos_tramo < 16 and puntos_tramo >= 12:
-	tramo = "D"
-elif puntos_tramo < 12 and puntos_tramo >= 0:
-	tramo = "E"
+# if puntos_tramo >= 50:
+#	tramo = "A"
+# elif puntos_tramo < 50 and puntos_tramo >= 25:
+#	tramo = "B"
+# elif puntos_tramo < 25 and puntos_tramo >= 16:
+#	tramo = "C"
+# elif puntos_tramo < 16 and puntos_tramo >= 12:
+#	tramo = "D"
+# elif puntos_tramo < 12 and puntos_tramo >= 0:
+#	tramo = "E"
 
 
 # Reporte de porcentajes
@@ -274,7 +300,7 @@ print(reporte06a + evaluacion_tiempo+'.')
 print("")
 print(reporte07+ porcentaje_str + reporte08+'.')
 print("")
-print('Obtienes ponderados ' + puntos_para_tramo + ' puntos, lo que te clasifica en el tramo ' + tramo)
+print('Obtienes ponderados ' + puntos_para_tramo + ' puntos, lo que te clasifica en el tramo ' + tramo2)
 print("#################")
 # print("Cantidad de palabras de cada lista: 1, 2, 3, 4 y 5 sílabas")
 # print(l_una)
@@ -336,14 +362,14 @@ plt.ylim(0,100)
 
 
 # Rectángulos con Alpha (transparencia de color)
-plt.axhspan(0,12, facecolor = "green", alpha =0.3)
-plt.axhspan(16,25,alpha =0.2)
-plt.axhspan(50,100, facecolor = "green", alpha =0.1)
-plt.text(0.5, 75, "A", fontsize=10, horizontalalignment='center', verticalalignment='center')
-plt.text(0.5, 36, "B", fontsize=10, horizontalalignment='center', verticalalignment='center')
-plt.text(0.5, 20, "C", fontsize=10, horizontalalignment='center', verticalalignment='center')
-plt.text(0.5, 13.5, "D", fontsize=10, horizontalalignment='center', verticalalignment='center')
-plt.text(0.5, 6, "E", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.axhspan(0,20, facecolor = "green", alpha =0.3)
+plt.axhspan(40,60,alpha =0.2)
+plt.axhspan(80,100, facecolor = "green", alpha =0.1)
+plt.text(0.5, 90, "A", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 70, "B", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 50, "C", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 30, "D", fontsize=10, horizontalalignment='center', verticalalignment='center')
+plt.text(0.5, 10, "E", fontsize=10, horizontalalignment='center', verticalalignment='center')
 
 plt.grid(True)
 plt.ylabel("Desempeño ponderado")
