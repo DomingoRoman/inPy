@@ -56,7 +56,7 @@ enunciados_incorrectas = ["Te equivocaste", "No, no, no, no...", "Error", "Mmmm.
 
 # Listas de palabras
 una = ["ay", "bien", "buen", "buey", "cien",  "cuan", "diez", "dio", "dios", "doy", "fiel","fue", "hay", "hiel", "hoy",  
-       "juez", "ley", "miau" ,"miel", "nuez", "pía", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
+       "juez", "ley", "miau" ,"miel", "nuez", "pie", "piel", "pues", "quien", "riel", "ruin", "seis", 
         "soy",  "vial", "vio"]
 
 dos = ["agua", "aún", "baúl", "boa",  "búho", "cae",  "caos", "cahuín", "caer", "caigo", "ciudad", "coa","crear", "cuento",
